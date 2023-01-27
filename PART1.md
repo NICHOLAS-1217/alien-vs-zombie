@@ -31,7 +31,7 @@ List down the contribution of each group members.
 
 For example:
 
-### Tony Stark
+### Lai Chi Nyet
 
 1. Randomly generate game board.
 2. *add more*
