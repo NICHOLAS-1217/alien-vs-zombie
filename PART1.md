@@ -8,38 +8,33 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 ### Completed
 
-List all the features completed.
-
-1. HiiIi
-2. Cool Feature #2
-3. *add more*
+1. Game Board
+2. Customize settings including game board dimensions and number of zombies
+3. Game objects are present in the game board and alien always start at the centre of boar*
 
 ### To Do
 
-List all the features not yet done. Remove this section if there is no incomplete requirements.
-
-1. Cool Feature #1
-2. *add more*
+1. Zombie movement
+2. Attributes for game characters
+3. Attack behavior
+4. Game controls by commands
+5. Save and load the game fil
 
 ## Additional Features
 
-Describe the additional features that has been implemented.
+Additional features have not been implemented yet. Additional features will be implemented soon in Part 2.
 
 ## Contributions
 
-List down the contribution of each group members.
-
-For example:
-
 ### Lai Chi Nyet
 
-1. Randomly generate game board.
-2. *add more*
+1. Display default settings 
+2. Display change settings
 
 ### Nicholas Tan Zhi Xuan
 
-1. Zombie movement and attack behaviour.
-2. *add more*
+1. Generate the game board
+2. Compile the code
 
 
 ## Problems Encountered & Solutions
