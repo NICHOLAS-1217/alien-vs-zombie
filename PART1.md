@@ -10,7 +10,7 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 List all the features completed.
 
-1. Cool Feature #1
+1. HiiIi
 2. Cool Feature #2
 3. *add more*
 
