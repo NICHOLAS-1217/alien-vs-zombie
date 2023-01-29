@@ -15,8 +15,8 @@
 #include <ctime>   // for time() in srand( time(NULL) );
 #include <iomanip> // for setw()
 using namespace std;
-// CLASS BOARD
-class Board
+// CLASS BOARD -------------------------------------------------------------------------------------------------------------------
+class GameBoard
 {
 private:
     vector<vector<char>> map_; // convention to put trailing underscore
@@ -27,8 +27,8 @@ public:
     void setObject(int col, int row, char object);
 };
 
-// CREATE EMPTY ROWS & RESIZE IT AND PUT RANDOM CHAR INTO THE ARRAY VECTOR
-void Board::init(int x_axis, int y_axis)
+// CREATE EMPTY ROWS & RESIZE IT AND PUT RANDOM CHAR INTO THE ARRAY VECTOR --------------------------------------------------------
+void GameBoard::init(int x_axis, int y_axis)
 {
     dimX_ = x_axis;
     dimY_ = y_axis;
@@ -51,7 +51,7 @@ void Board::init(int x_axis, int y_axis)
             map_[i][j] = objects[objNo];
         }
     }
-    // LOCATE ALIEN AT THE CENTRE
+    // alien at center
     int m;
     int n;
     m = (dimX_-1)/2;
@@ -60,8 +60,8 @@ void Board::init(int x_axis, int y_axis)
     
 }
 
-// DISPLAY BOARD
-void Board::display() const
+// DISPLAY BOARD ---------------------------------------------------------------------------------------------------------------------
+void GameBoard::display() const
 {
     cout << ".: ALIEN V/S ZOMBIE :." << endl;
     cout << endl;
@@ -112,15 +112,15 @@ void Board::display() const
          << endl;
 }
 
-// CALLING DISPLAY FUNCTION
+// CALLING DISPLAY FUNCTION --------------------------------------------------------------------------------------------------------
 void displayBoard(int x_axis, int y_axis)
 {
-    Board board;
+    GameBoard board;
     board.init(x_axis,y_axis);
     board.display();
 }
 
-// ACCEPT ODD NUMBERS
+// ACCEPT ODD NUMBERS ---------------------------------------------------------------------------------------------------------------
 void oddNumbers(int &a)
 {
     do
@@ -138,7 +138,7 @@ void oddNumbers(int &a)
     return;
 }
 
-// CHANGE SETTINGS
+// CHANGE SETTINGS ------------------------------------------------------------------------------------------------------------------------
 void changeSettings(int &x_axis, int &y_axis, int &zombie)
 {
     cout << "_________________________________________" << endl;
@@ -161,7 +161,7 @@ void changeSettings(int &x_axis, int &y_axis, int &zombie)
     system("pause");
 }
 
-// DEFAULT SETTINGS
+// DEFAULT SETTINGS ----------------------------------------------------------------------------------------------------------------------
 void displayMainMenu(int x_axis, int y_axis, int zombie)
 {
     char answer;
@@ -190,6 +190,16 @@ void displayMainMenu(int x_axis, int y_axis, int zombie)
         cout << endl;
         displayMainMenu(x_axis, y_axis, zombie);
     }
+}
+
+// MAIN ----------------------------------------------------------------------------------------------------------------------------------------
+int main()
+{
+    int x_axis = 5; // board rows
+    int y_axis = 9; // board column
+    int zombie = 1; // num of zombies
+    displayMainMenu(x_axis, y_axis, zombie);
+}
 }
 
 // AMIN KONTOL
