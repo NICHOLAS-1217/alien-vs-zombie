@@ -30,8 +30,8 @@ public:
 // CREATE EMPTY ROWS & RESIZE IT AND PUT RANDOM CHAR INTO THE ARRAY VECTOR --------------------------------------------------------
 void GameBoard::init(int x_axis, int y_axis)
 {
-    dimX_ = x_axis;
-    dimY_ = y_axis;
+    dimY_ = x_axis;
+    dimX_ = y_axis;
     char objects[] = {' ', ' ', ' ', 'h', 'r', 'p', '>', '<', '^', 'v'};
     char alien[] = {'A'};
     int noOfObjects = 10; // number of objects in the objects array
@@ -195,18 +195,8 @@ void displayMainMenu(int x_axis, int y_axis, int zombie)
 // MAIN ----------------------------------------------------------------------------------------------------------------------------------------
 int main()
 {
-    int x_axis = 5; // board rows
+    int x_axis = 5; // board row
     int y_axis = 9; // board column
     int zombie = 1; // num of zombies
-    displayMainMenu(x_axis, y_axis, zombie);
-}
-}
-
-// AMIN KONTOL
-int main()
-{
-    int x_axis = 5; // board rows
-    int y_axis = 9; // board column
-    int zombie = 1; // num. of zombies
     displayMainMenu(x_axis, y_axis, zombie);
 }
