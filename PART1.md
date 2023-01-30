@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-Please provide the YouTube link to your [Video Demo](https://youtube.com).
+Please provide the YouTube link to your [Video Demo](https://www.youtube.com/watch?v=-SVhHg94o3w).
 
 ## Minimum Requirements
 
@@ -39,4 +39,7 @@ Additional features have not been implemented yet. Additional features will be i
 
 ## Problems Encountered & Solutions
 
-Describe the problems encountered and provide the solutions / plan for the solutions.
+1. After committing the code with GitHub by clicking the run button in Visual Studio Code, the output is not the full version of what is expected to be displayed. We solved this problem  by running the code through the terminal instead of directly pressing the run button in Visual Studio Code. 
+2. When we run the program we discover that the output for row and column are inversely shown in the game board. We read through the code again and discover that we have put the dimension wrong and we have change it. 
+
+
