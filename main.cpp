@@ -22,19 +22,21 @@ private:
     vector<vector<char>> map_; // convention to put trailing underscore
     int dimX_, dimY_;          // to indicate private data
 public:
-    void init(int x_axis, int y_axis);
+    void init(int x_axis, int y_axis,int numofzombie);
     void display() const;
     void setObject(int col, int row, char object);
 };
 
 // CREATE EMPTY ROWS & RESIZE IT AND PUT RANDOM CHAR INTO THE ARRAY VECTOR --------------------------------------------------------
-void GameBoard::init(int x_axis, int y_axis)
+void GameBoard::init(int x_axis, int y_axis, int numofzombie)
 {
     dimY_ = x_axis;
     dimX_ = y_axis;
     char objects[] = {' ', ' ', ' ', 'h', 'r', 'p', '>', '<', '^', 'v'};
-    char alien[] = {'A'};
+    char alien = 'A';
+    char zombie[] = {'1','2','3','4','5','6','7','8','9'};
     int noOfObjects = 10; // number of objects in the objects array
+    int noofzombie = numofzombie;
     // create dynamic 2D array using vector
     map_.resize(dimY_); // create empty rows
     for (int i = 0; i < dimY_; ++i)
@@ -51,14 +53,26 @@ void GameBoard::init(int x_axis, int y_axis)
             map_[i][j] = objects[objNo];
         }
     }
+    
+    // random zombie
+    for(int i=0; i < noofzombie; i++)
+    {
+        int a,b;
+        a = rand() % dimY_;
+        b = rand() % dimX_;  
+        int zombieno = i;
+        map_[a][b] = zombie[zombieno];
+    }
+
     // alien at center
     int m;
     int n;
     m = (dimX_-1)/2;
     n = (dimY_-1)/2;
-    map_[n][m] = alien[0];
+    map_[n][m] = alien;
     
-}
+};
+
 
 // DISPLAY BOARD ---------------------------------------------------------------------------------------------------------------------
 void GameBoard::display() const
@@ -113,10 +127,10 @@ void GameBoard::display() const
 }
 
 // CALLING DISPLAY FUNCTION --------------------------------------------------------------------------------------------------------
-void displayBoard(int x_axis, int y_axis)
+void displayBoard(int x_axis, int y_axis, int numofzombie)
 {
     GameBoard board;
-    board.init(x_axis,y_axis);
+    board.init(x_axis,y_axis, numofzombie);
     board.display();
 }
 
@@ -139,7 +153,7 @@ void oddNumbers(int &a)
 }
 
 // CHANGE SETTINGS ------------------------------------------------------------------------------------------------------------------------
-void changeSettings(int &x_axis, int &y_axis, int &zombie)
+void changeSettings(int &x_axis, int &y_axis, int &noofzombie)
 {
     cout << "_________________________________________" << endl;
     cout << "Board Settings" << endl;
@@ -155,14 +169,14 @@ void changeSettings(int &x_axis, int &y_axis, int &zombie)
     cout << "Zombies Settings" << endl;
     cout << "-----------------------------------------" << endl;
     cout << "Enter number of zombies =>  ";
-    cin >> zombie;
+    cin >> noofzombie;
     cout << endl;
     cout << "Settings Updated." << endl;
     system("pause");
 }
 
 // DEFAULT SETTINGS ----------------------------------------------------------------------------------------------------------------------
-void displayMainMenu(int x_axis, int y_axis, int zombie)
+void displayMainMenu(int x_axis, int y_axis, int noofzombie)
 {
     char answer;
     cout << "__________________________" << endl;
@@ -170,25 +184,25 @@ void displayMainMenu(int x_axis, int y_axis, int zombie)
     cout << "--------------------------" << endl;
     cout << "Board Rows     :  " << x_axis << endl;
     cout << "Board Columns  :  " << y_axis << endl;
-    cout << "Zombies Count  :  " << zombie << endl;
+    cout << "Zombies Count  :  " << noofzombie << endl;
     cout << endl;
     cout << "Do you want to change the settings? (y/n) => ";
     cin >> answer;
     answer = toupper(answer);
     if (answer == 'Y' || answer == 'y')
     {
-        changeSettings(x_axis, y_axis, zombie);
-        displayMainMenu(x_axis, y_axis, zombie);
+        changeSettings(x_axis, y_axis, noofzombie);
+        displayMainMenu(x_axis, y_axis, noofzombie);
     }
     else if (answer == 'N' || answer == 'n')
     {
-        displayBoard(x_axis, y_axis);
+        displayBoard(x_axis, y_axis, noofzombie);
     }
     else
     {
         cout << "Input Error!" << endl;
         cout << endl;
-        displayMainMenu(x_axis, y_axis, zombie);
+        displayMainMenu(x_axis, y_axis, noofzombie);
     }
 }
 
@@ -197,6 +211,7 @@ int main()
 {
     int x_axis = 5; // board row
     int y_axis = 9; // board column
-    int zombie = 1; // num of zombies
-    displayMainMenu(x_axis, y_axis, zombie);
+    int numofzombie = 1; // num of zombies
+    displayMainMenu(x_axis, y_axis, numofzombie);
 }
+
