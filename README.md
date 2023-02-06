@@ -12,7 +12,7 @@ For example:
 
 ```
 g++ main.cpp (enter)
-g++ main.exe (enter)
+g++ a.exe (enter)
 ```
 
 ## User Manual
