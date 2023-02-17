@@ -10,7 +10,7 @@ Please provide the YouTube link to your [Video Demo](https://www.youtube.com/wat
 
 1. Game Board
 2. Customize settings including game board dimensions and number of zombies
-3. Game objects are present in the game board and alien always start at the centre of boar*
+3. Game objects are present in the game board and alien always start at the centre of board
 
 ### To Do
 
@@ -18,7 +18,7 @@ Please provide the YouTube link to your [Video Demo](https://www.youtube.com/wat
 2. Attributes for game characters
 3. Attack behavior
 4. Game controls by commands
-5. Save and load the game fil
+5. Save and load the game file
 
 ## Additional Features
 
