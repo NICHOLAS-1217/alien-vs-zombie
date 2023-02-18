@@ -64,8 +64,8 @@ public:
 
     Zombie()
     {
-        zombie_health = rand() % 200;
-        zombie_attack = rand() % 500;
+        zombie_health = rand() % 300;
+        zombie_attack = rand() % 50;
         zombie_range = rand() % 3;
         zombie_alive = true;
     }
@@ -353,7 +353,8 @@ void displayBoard(GameBoard board, Alien a, Zombie z[])
             cout << "    ";
         }
         cout << "Zombie   : Health = "<<setw(3)<<z[i].zombie_health;
-        cout << ", Attack = "<<setw(3)<<z[i].zombie_attack<<endl;
+        cout << ", Attack = "<<setw(3)<<z[i].zombie_attack;
+        cout << ", Range = "<<setw(3)<<z[i].zombie_range<<endl;
 	}
     cout<<endl;
 }
@@ -546,14 +547,10 @@ int main()
 				system("cls");
 				displayBoard(board,a,z);
                 z[i].zombie_turn = false;
-
-                if (z[i].zombie_turn == false)
-                {
-                    a.alien_turn = true;
-                }
+                z[i+1].zombie_turn = true;
 			}
 		}
-		
+		a.alien_turn = true;
     	
 	}while(option != "9");
     
