@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-Please provide the YouTube link to your [Video Demo](https://youtu.be/kzcuHqJnBxI).
+Please provide the YouTube link to your [Video Demo](https://www.youtube.com/watch?v=WDJm0MjiZXk).
 
 ## Minimum Requirements
 
@@ -11,7 +11,7 @@ Please provide the YouTube link to your [Video Demo](https://youtu.be/kzcuHqJnBx
 1. Game board with the dimensions must be odd number
 2. Customise settings including game board dimensions and number of zombies
 3. Game objects are present in the game board and alien always start at the centre of board
-4. All atributes of Alien and Zombie are initialized with a random number before the game begins
+4. All attributes of Alien and Zombie are initialized with a random number before the game begins
 5. Alien movement (i.e., up, down, left, right)
 6. Zombie movement (i.e., up, down, left, right)
 7. When hits the boarder of the game board, the game will stop
@@ -36,7 +36,7 @@ No additional features is being implemented.
 
 1. Display default settings
 2. Display change setting
-3. Initialize the atributes for alien and zombie with randon number before the game begins
+3. Initialize the attributes for alien and zombie with randon number before the game begins
 4. Alien movement (up, down, left, right)
 5. Move alien to designated and leaves trail behind
 6. Game controls (up, down, left, right, help, quit)
