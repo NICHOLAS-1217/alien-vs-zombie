@@ -1,6 +1,6 @@
 # Alien vs. Zombie
 
-Alien vs. Zombie is a turn-based combat game. The player controls Alien to defeat a group of Zombies. Prior the game, the player can customize settings including game board dimensions and number of zombies. The player can also save a game into a file and load a game from a file. The Alien and Zombies are given with their own attributes. The player can \move the Alien to attack the zombies to defeat them by giving commands. The game contain many game objects that Alien can interact with. 
+Alien vs. Zombie is a turn-based combat game. The player controls Alien to defeat a group of Zombies. Prior the game, the player can customize settings including game board dimensions and number of zombies. The player can also save a game into a file and load a game from a file. The Alien and Zombies are given with their own attributes. The player can move the Alien to attack the zombies to defeat them by giving commands. The game contain many game objects that Alien can interact with. 
 
 ![./Alien vs Zombie.png](https://github.com/NICHOLAS-1217/Starter-Kit-master/blob/master/Alien%20vs%20Zombie.png?raw=true)
 
@@ -25,9 +25,9 @@ Alien vs Zombie is a game that let the players to control the alien and attack t
 4. Players now can enter commands to operate the game. Players can enter "help" to check the list of commands that are present in the game. 
 5. Players can enter other commands (i.e., up, down, left, right) to move the Alien.
 6. It is stopped by one of the following events:
-  1. It hits the border of the game board (see Game Board).
-  2. It hits the Rock object (see Game Objects).
-  3. It hits and attacks Zombie, but Zombie survives the attack.
+  -It hits the border of the game board (see Game Board).
+  -It hits the Rock object (see Game Objects).
+  -It hits and attacks Zombie, but Zombie survives the attack.
 7. Alien attacks when it encounters Zombie on the move. If Zombie is defeated by the attack, Zombie will be 
 removed from the game board while Alien continues to move.
 8. After the you enter the command to move the Alien, the zombie will move randomly by the computer.
