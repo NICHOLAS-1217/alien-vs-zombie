@@ -2,7 +2,7 @@
 
 Alien vs. Zombie is a turn-based computer game in which the player controls Alien to defeat a group of Zombies. Prior the game, the player can customize settings including game board dimensions and number of zombies. The player can also save a game into a file and load a game from a file.
 
-![Alien_vs_Zombie](./Alien vs Zombie.png)
+![Alien_vs_Zombie]([./Alien vs Zombie.png](https://github.com/NICHOLAS-1217/Starter-Kit-master/blob/master/Alien%20vs%20Zombie.png?raw=true))
 
 [Video Demo](https://www.youtube.com/watch?v=-SVhHg94o3w).
 
