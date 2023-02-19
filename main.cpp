@@ -15,6 +15,8 @@
 #include <ctime>   // for time() in srand( time(NULL) );
 #include <iomanip> // for setw()
 using namespace std;
+
+// ALIEN --------------------------------------------------------------------------------------------------------------------------
 class Alien
 {
 public:
@@ -44,15 +46,11 @@ public:
         {
             cout << "    ";
         }
-        cout << "Alien    : Health = "<<setw(3)<<alien_health;
+        cout << "Alien    : Life = "<<setw(3)<<alien_health;
         cout << ", Attack = "<<setw(3)<<alien_attack<<endl;
     }
 };
-
-
-// ------------------ //
-// ----- Zombie ----- //
-// ------------------ //
+// ZOMBIE ------------------------------------------------------------------------------------------------------------------------
 class Zombie
 {
 public:
@@ -69,10 +67,7 @@ public:
         zombie_range = rand() % 3;
         zombie_alive = true;
     }
-    
-    
 };
-
 // CLASS BOARD -------------------------------------------------------------------------------------------------------------------
 class GameBoard
 {
@@ -83,7 +78,7 @@ private:
 public:
 	int noofzombie;
     // CREATE EMPTY ROWS & RESIZE IT AND PUT RANDOM CHAR INTO THE ARRAY VECTOR --------------------------------------------------------
-void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
+    void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
     {
         dimY_ = x_axis;
         dimX_ = y_axis;
@@ -111,7 +106,7 @@ void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
                 map_[i][j] = objects[objNo];
             }
         }
-        // random zombie
+        // random zombie position
         for(int i=0; i < numofzombie; i++)
         {
             int a,b;
@@ -128,8 +123,6 @@ void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
         alien_y = (dimY_-1)/2;
         map_[alien_y][alien_x] = alien.name;
     }
-
-    
     void display();
     void changes(string option, Alien a, Zombie z[])
     {
@@ -138,19 +131,19 @@ void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
     	// detects what's up ahead on the alien's path
     	if (a.alien_turn == true)
     	{
-    		if (option == "1")
+    		if (option == "up")
 			{
 				discover = map_[alien_y-1][alien_x];
 				
-			} else if (option == "2") {
+			} else if (option == "down") {
 				
 				discover = map_[alien_y+1][alien_x];
 				
-			} else if (option == "3") {
+			} else if (option == "left") {
 				
 				discover = map_[alien_y][alien_x-1];
 				
-			} else if (option == "4") {
+			} else if (option == "right") {
 				
 				discover = map_[alien_y][alien_x+1];
 			}
@@ -227,22 +220,22 @@ void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
 		// moves alien to designated and leaves trail behind
 		if (alien.alien_turn == true)
 		{
-			if (option == "1")
+			if (option == "up")
 			{
 				map_[alien_y][alien_x] = '.';
 				alien_y -= 1;
 				map_[alien_y][alien_x] = alien.name;
-			} else if (option == "2") {
+			} else if (option == "down") {
 				
 				map_[alien_y][alien_x] = '.';
 				alien_y += 1;
 				map_[alien_y][alien_x] = alien.name;
-			} else if (option == "3") {
+			} else if (option == "left") {
 				
 				map_[alien_y][alien_x] = '.';
 				alien_x -= 1;
 				map_[alien_y][alien_x] = alien.name;
-			} else if (option == "4") {
+			} else if (option == "right") {
 				
 				map_[alien_y][alien_x] = '.';
 				alien_x += 1;
@@ -255,7 +248,6 @@ void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
 		{
 			if (z[i].zombie_turn == true)
 			{
-				
 				if (z[i].zombie_move == 1)
 				{
                     map_[z[i].y][z[i].x] = ' ';
@@ -288,7 +280,7 @@ void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
 	// observes alien's surroundings after movement
 	void surrounding(string option, Alien a)
 	{		
-		if (option == "1" || option == "2" || option == "3" || option == "4")
+		if (option == "up" || option == "down" || option == "left" || option == "right")
 		{
 			map_[prev_y][prev_x] = ' ';
 			if (alien_y == 0)
@@ -307,8 +299,7 @@ void init(int x_axis, int y_axis, Zombie zombie[], Alien alien, int numofzombie)
 	
     void setObject(int col, int row, char object);
 };
-
-//Command List
+// COMMAND LIST ------------------------------------------------------------------------------------------------------------------
 void displayCommandList()
 {
     cout << "Commands" << endl;
@@ -322,8 +313,7 @@ void displayCommandList()
     cout << "8. load   - Load a game." << endl;
     cout << "9. quit   - Quit the game." << endl<<endl;
 }
-
-//command
+// COMMAND FUNCTIONS ----------------------------------------------------------------------------------------------------------------
 string command()
 {
     string command;
@@ -334,10 +324,15 @@ string command()
     {
         displayCommandList();
     }
+    else if(command == "quit")
+    {
+        cout << "" << endl;
+        cout<<"goodbye!!!"<<endl;
+        exit(0);
+    }
 	return command;
 }
-
-//Display Board and Character Attributes
+// DISPLAY BOARD AND CHARACTER ATTRIBUTES ------------------------------------------------------------------------------------------------
 void displayBoard(GameBoard board, Alien a, Zombie z[])
 {
 	board.display();
@@ -352,13 +347,12 @@ void displayBoard(GameBoard board, Alien a, Zombie z[])
         {
             cout << "    ";
         }
-        cout << "Zombie   : Health = "<<setw(3)<<z[i].zombie_health;
+        cout << "Zombie   : Life = "<<setw(3)<<z[i].zombie_health;
         cout << ", Attack = "<<setw(3)<<z[i].zombie_attack;
         cout << ", Range = "<<setw(3)<<z[i].zombie_range<<endl;
 	}
     cout<<endl;
 }
-
 // DISPLAY BOARD ---------------------------------------------------------------------------------------------------------------------
 void GameBoard::display()
 {
@@ -412,7 +406,6 @@ void GameBoard::display()
          
     
 }
-
 // ACCEPT ODD NUMBERS ---------------------------------------------------------------------------------------------------------------
 void oddNumbers(int &a)
 {
@@ -430,7 +423,6 @@ void oddNumbers(int &a)
     } while (a % 2 == 0 || a == 1);
     return;
 }
-
 // CHANGE SETTINGS ------------------------------------------------------------------------------------------------------------------------
 int changeSettings(int &x_axis, int &y_axis, GameBoard board)
 {
@@ -455,7 +447,6 @@ int changeSettings(int &x_axis, int &y_axis, GameBoard board)
 
     return board.noofzombie;
 }
-
 // DEFAULT SETTINGS ----------------------------------------------------------------------------------------------------------------------
 char displayMainMenu(int x_axis, int y_axis, GameBoard board)
 {
@@ -472,7 +463,6 @@ char displayMainMenu(int x_axis, int y_axis, GameBoard board)
     answer = toupper(answer);
     return answer;
 }
-
 // MAIN ----------------------------------------------------------------------------------------------------------------------------------------
 int main()
 {
@@ -552,6 +542,7 @@ int main()
 		}
 		a.alien_turn = true;
     	
-	}while(option != "9");
+	}while(option != "quit");
     
 }
+
