@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-Please provide the YouTube link to your [Video Demo](https://youtube.com).
+Please provide the YouTube link to your [Video Demo](https://youtu.be/kzcuHqJnBxI).
 
 ## Minimum Requirements
 
@@ -55,4 +55,4 @@ No additional features is being implemented.
 1. After committing the code with GitHub by clicking the run button in Visual Studio Code, the output is not the full version of what is expected to be displayed. We solved this problem  by running the code through the terminal instead of directly pressing the run button in Visual Studio Code. 
 2. When we run the program we discover that the output for row and column are inversely shown in the game board. We read through the code again and discover that we have put the dimension wrong and we have change it. 
 3. We saw that rand() function is keep giving the same output (which is not random) exp: 2 2 2 2 2. To solve this problem we found out that use srand() is more better to randomize the zombie movment.
-4. we found that when displaying the zombie it is showing the smiley face instead of a number character. The root of the problem is because we tried to display an integer value into a char vector, which then causes this problem. To solve this, we converted the integer value to a character value, so that it can be put into the char vector.
+4. We found that when displaying the zombie it is showing the smiley face instead of a number character. The root of the problem is because we tried to display an integer value into a char vector, which then causes this problem. To solve this, we converted the integer value to a character value, so that it can be put into the char vector.
