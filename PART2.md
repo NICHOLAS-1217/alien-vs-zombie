@@ -8,44 +8,50 @@ Please provide the YouTube link to your [Video Demo](https://youtube.com).
 
 ### Completed
 
-List all the features completed.
-
-1. Cool Feature #1
-2. Cool Feature #2
-3. *add more*
+1. Game board with the dimensions must be odd number
+2. Customise settings including game board dimensions and number of zombies
+3. Game objects are present in the game board and alien always start at the centre of board
+4. All atributes of Alien and Zombie are initialized with a random number before the game begins
+5. Alien movement (i.e., up, down, left, right)
+6. Zombie movement (i.e., up, down, left, right)
+7. When hits the boarder of the game board, the game will stop
+8. Multiple zombies with a maximum of 9
+9. Game objects functions (health, empty, trail) are worked
+10. Game controls (up, down, left, right, help, quit) are worked
 
 ### To Do
 
-List all the features not yet done. Remove this section if there is no incomplete requirements.
-
-1. Cool Feature #1
-2. *add more*
+1. Alien and zombie attack
+2. Game objects functions (arrow, pod, rock)
+3. Game controls (help, save, load)
+4. Save and load game
 
 ## Additional Features
 
-Describe the additional features that has been implemented.
+No additional features is being implemented. 
 
 ## Contributions
 
-List down the contribution of each group members.
+### Lai Chi Nyet
 
-For example:
+1. Display default settings
+2. Display change setting
+3. Initialize the atributes for alien and zombie with randon number before the game begins
+4. Alien movement (up, down, left, right)
+5. Move alien to designated and leaves trail behind
+6. Game controls (up, down, left, right, help, quit)
 
-### Tony Stark
+### Nicholas Tan Zhi Xuan
 
-1. Randomly generate game board.
-2. *add more*
-
-### Steve Rogers
-
-1. Zombie movement and attack behaviour.
-2. *add more*
-
-### Dr. Strange
-
-1. Implement all game objects.
-2. *add more*
+1. Compile the code among the members
+2. Generate the game board
+3. Multiple zombies
+4. Movement of zombies (up, down, left, right)
+5. When hit the boarder of the game board, the game will stop
+6. Game objects function for health
 
 ## Problems Encountered & Solutions
 
-Describe the problems encountered and provide the solutions / plan for the solutions.
+1. After committing the code with GitHub by clicking the run button in Visual Studio Code, the output is not the full version of what is expected to be displayed. We solved this problem  by running the code through the terminal instead of directly pressing the run button in Visual Studio Code. 
+2. When we run the program we discover that the output for row and column are inversely shown in the game board. We read through the code again and discover that we have put the dimension wrong and we have change it. 
+3. 
