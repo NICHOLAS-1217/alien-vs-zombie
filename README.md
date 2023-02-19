@@ -56,8 +56,7 @@ Here are some game objects that include inside the gameboard:-
 • Reveals the hidden game object when hit by Alien.
 • Stops the Alien from moving.
 5. Empty Space 
--
-• Just an empty space on the board.
+-• Just an empty space on the board.
 6. Trail 
 -. 
 • Left by Alien when it moves.
