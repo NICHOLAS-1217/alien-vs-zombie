@@ -35,6 +35,7 @@ removed from the game board while Alien continues to move.
 10. The process of Alien move and Zombie move will take turn occurs until the game end.
 12. You can also end the game directly by typing "quit" in the command's section. 
 13. You can also save and load the game. 
+14. The game will end if either one of the character is defeated when its life becomes zero. 
 
 Here are some game objects that include inside the gameboard:-
 1. Arrow 
